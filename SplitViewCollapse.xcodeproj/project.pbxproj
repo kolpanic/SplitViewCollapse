@@ -1,0 +1,297 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CBBD0D9F1861F353002471A0 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBBD0D9E1861F353002471A0 /* Cocoa.framework */; };
+		CBBD0DAB1861F353002471A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBD0DAA1861F353002471A0 /* main.m */; };
+		CBBD0DB21861F353002471A0 /* KMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBD0DB11861F353002471A0 /* KMAppDelegate.m */; };
+		CBBD0DB51861F353002471A0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBBD0DB31861F353002471A0 /* MainMenu.xib */; };
+		CBBD0DB71861F353002471A0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBBD0DB61861F353002471A0 /* Images.xcassets */; };
+		CBBD0DD41861F3C4002471A0 /* KMCollapsibleSplitView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBD0DD31861F3C4002471A0 /* KMCollapsibleSplitView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CBBD0D9B1861F353002471A0 /* SplitViewCollapse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SplitViewCollapse.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBBD0D9E1861F353002471A0 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		CBBD0DA61861F353002471A0 /* SplitViewCollapse-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SplitViewCollapse-Info.plist"; sourceTree = "<group>"; };
+		CBBD0DAA1861F353002471A0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CBBD0DAC1861F353002471A0 /* SplitViewCollapse-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SplitViewCollapse-Prefix.pch"; sourceTree = "<group>"; };
+		CBBD0DB01861F353002471A0 /* KMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KMAppDelegate.h; sourceTree = "<group>"; };
+		CBBD0DB11861F353002471A0 /* KMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KMAppDelegate.m; sourceTree = "<group>"; };
+		CBBD0DB41861F353002471A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		CBBD0DB61861F353002471A0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		CBBD0DD21861F3C4002471A0 /* KMCollapsibleSplitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMCollapsibleSplitView.h; sourceTree = "<group>"; };
+		CBBD0DD31861F3C4002471A0 /* KMCollapsibleSplitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMCollapsibleSplitView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CBBD0D981861F353002471A0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBBD0D9F1861F353002471A0 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CBBD0D921861F353002471A0 = {
+			isa = PBXGroup;
+			children = (
+				CBBD0DA41861F353002471A0 /* SplitViewCollapse */,
+				CBBD0D9D1861F353002471A0 /* Frameworks */,
+				CBBD0D9C1861F353002471A0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CBBD0D9C1861F353002471A0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CBBD0D9B1861F353002471A0 /* SplitViewCollapse.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CBBD0D9D1861F353002471A0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CBBD0D9E1861F353002471A0 /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CBBD0DA41861F353002471A0 /* SplitViewCollapse */ = {
+			isa = PBXGroup;
+			children = (
+				CBBD0DB01861F353002471A0 /* KMAppDelegate.h */,
+				CBBD0DB11861F353002471A0 /* KMAppDelegate.m */,
+				CBBD0DD21861F3C4002471A0 /* KMCollapsibleSplitView.h */,
+				CBBD0DD31861F3C4002471A0 /* KMCollapsibleSplitView.m */,
+				CBBD0DB31861F353002471A0 /* MainMenu.xib */,
+				CBBD0DB61861F353002471A0 /* Images.xcassets */,
+				CBBD0DA51861F353002471A0 /* Supporting Files */,
+			);
+			path = SplitViewCollapse;
+			sourceTree = "<group>";
+		};
+		CBBD0DA51861F353002471A0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CBBD0DA61861F353002471A0 /* SplitViewCollapse-Info.plist */,
+				CBBD0DAA1861F353002471A0 /* main.m */,
+				CBBD0DAC1861F353002471A0 /* SplitViewCollapse-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CBBD0D9A1861F353002471A0 /* SplitViewCollapse */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CBBD0DCC1861F353002471A0 /* Build configuration list for PBXNativeTarget "SplitViewCollapse" */;
+			buildPhases = (
+				CBBD0D971861F353002471A0 /* Sources */,
+				CBBD0D981861F353002471A0 /* Frameworks */,
+				CBBD0D991861F353002471A0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SplitViewCollapse;
+			productName = SplitViewCollapse;
+			productReference = CBBD0D9B1861F353002471A0 /* SplitViewCollapse.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CBBD0D931861F353002471A0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = KM;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Karl Moskowski";
+			};
+			buildConfigurationList = CBBD0D961861F353002471A0 /* Build configuration list for PBXProject "SplitViewCollapse" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CBBD0D921861F353002471A0;
+			productRefGroup = CBBD0D9C1861F353002471A0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CBBD0D9A1861F353002471A0 /* SplitViewCollapse */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CBBD0D991861F353002471A0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBBD0DB71861F353002471A0 /* Images.xcassets in Resources */,
+				CBBD0DB51861F353002471A0 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CBBD0D971861F353002471A0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBBD0DD41861F3C4002471A0 /* KMCollapsibleSplitView.m in Sources */,
+				CBBD0DB21861F353002471A0 /* KMAppDelegate.m in Sources */,
+				CBBD0DAB1861F353002471A0 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CBBD0DB31861F353002471A0 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CBBD0DB41861F353002471A0 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CBBD0DCA1861F353002471A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		CBBD0DCB1861F353002471A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		CBBD0DCD1861F353002471A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SplitViewCollapse/SplitViewCollapse-Prefix.pch";
+				INFOPLIST_FILE = "SplitViewCollapse/SplitViewCollapse-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		CBBD0DCE1861F353002471A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SplitViewCollapse/SplitViewCollapse-Prefix.pch";
+				INFOPLIST_FILE = "SplitViewCollapse/SplitViewCollapse-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CBBD0D961861F353002471A0 /* Build configuration list for PBXProject "SplitViewCollapse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBBD0DCA1861F353002471A0 /* Debug */,
+				CBBD0DCB1861F353002471A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CBBD0DCC1861F353002471A0 /* Build configuration list for PBXNativeTarget "SplitViewCollapse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBBD0DCD1861F353002471A0 /* Debug */,
+				CBBD0DCE1861F353002471A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CBBD0D931861F353002471A0 /* Project object */;
+}
