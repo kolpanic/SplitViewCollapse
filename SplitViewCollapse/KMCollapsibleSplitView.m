@@ -6,52 +6,102 @@
 //  Copyright (c) 2013 Karl Moskowski. All rights reserved.
 //
 
-// NOTES:
-// Ensure there's a FIXED RIGHT PANE WIDTH, otherwise the right pane will resize with the window.
+// Collapses the right pane with animation, preserving its fixed-width (if set)
 
 #import "KMCollapsibleSplitView.h"
+@import QuartzCore;
 
 @interface KMCollapsibleSplitView () <NSSplitViewDelegate>
 
-@property (weak, nonatomic) NSView *leftPane;
-@property (weak, nonatomic)  NSView *rightPane;
-@property (strong, nonatomic) NSArray *rightPaneConstraints;
-@property (assign, nonatomic) CGFloat originalSplitterPosition;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *rightPaneWidthConstraint;
+@property (weak, nonatomic) IBOutlet NSView *rightPane;
+
+@property (assign, nonatomic) CGFloat originalRightPaneWidth;
+@property (assign, nonatomic) CGFloat dividerPosition;
 
 @end
 
 @implementation KMCollapsibleSplitView
 
-- (void) awakeFromNib {
-	[self setDelegate:self];
-	self.leftPane = [[self subviews] objectAtIndex:0];
-	self.rightPane = [[self subviews] objectAtIndex:1];
-	self.originalSplitterPosition = (self.frame.size.width - self.rightPane.frame.size.width);
-    
-	// save the right pane's constraints so they can be restored after removal
-	self.rightPaneConstraints = [self.rightPane constraints];
+#pragma mark - Set Up
+
++ (id) defaultAnimationForKey:(NSString *)key {
+	if ([key isEqualToString:@"dividerPosition"]) {
+		CAAnimation *animation = [CABasicAnimation animation];
+		animation.duration = 0.1;
+		return animation;
+	}
+	return [super defaultAnimationForKey:key];
 }
 
+- (void) awakeFromNib {
+	[self setDelegate:self];
+	[self determineDividerPosition];
+    self.animateCollapse = YES;
+}
+
+#pragma mark - Actions
+
 - (IBAction) toggleRightPane:(id)sender {
-	BOOL shouldCollapse = (self.rightPane.frame.size.width > 0.0);
-    
-	// remove the right pane's constraints when collapsing, and restore them when uncollapsing
-	for (NSLayoutConstraint *constraint in self.rightPaneConstraints) {
-		if (shouldCollapse) {
-			[self.rightPane removeConstraint:constraint];
-		} else {
-			[self.rightPane addConstraint:constraint];
-		}
+	if (self.originalRightPaneWidth <= 0.0) {
+		self.originalRightPaneWidth = self.rightPane.frame.size.width;
 	}
-    
-	[self.animator setPosition:(shouldCollapse ? self.frame.size.width : self.originalSplitterPosition) ofDividerAtIndex:0];
+
+	BOOL isCollapsed = [self isSubviewCollapsed:self.rightPane];
+
+	if (!isCollapsed && self.rightPaneWidthConstraint) {
+		[self.rightPane removeConstraint:self.rightPaneWidthConstraint];
+	}
+	if (self.animateCollapse) {
+		[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
+			self.animator.dividerPosition = self.frame.size.width - (isCollapsed ? self.originalRightPaneWidth : 0.0);
+		} completionHandler:^{
+			if (isCollapsed && self.rightPaneWidthConstraint) {
+				[self.rightPane addConstraint:self.rightPaneWidthConstraint];
+			}
+		}];
+	} else {
+		self.dividerPosition = self.frame.size.width - (isCollapsed ? self.originalRightPaneWidth : 0.0);
+        if (isCollapsed && self.rightPaneWidthConstraint) {
+            [self.rightPane addConstraint:self.rightPaneWidthConstraint];
+        }
+	}
+}
+
+#pragma mark - Accessors
+
+- (void) setDividerPosition:(CGFloat)value {
+	_dividerPosition = value;
+	[self setPosition:value ofDividerAtIndex:0];
+}
+
+- (NSView *) rightPane {
+	return _rightPane ? : (_rightPane = [[self subviews] objectAtIndex:1]);
+}
+
+#pragma mark - Resizing
+
+- (void) viewDidEndLiveResize {
+	[self determineDividerPosition];
+	[super viewDidEndLiveResize];
+}
+
+- (void) determineDividerPosition {
+	_dividerPosition = (self.frame.size.width - self.rightPane.frame.size.width);
 }
 
 #pragma mark - NSSplitViewDelegate
 
-// Ensure the split view can't be resized manually
+- (BOOL) splitView:(NSSplitView *)splitView shouldHideDividerAtIndex:(NSInteger)dividerIndex {
+	return YES;
+}
+
 - (NSRect) splitView:(NSSplitView *)splitView effectiveRect:(NSRect)proposedEffectiveRect forDrawnRect:(NSRect)drawnRect ofDividerAtIndex:(NSInteger)dividerIndex {
 	return NSZeroRect;
+}
+
+- (BOOL) splitView:(NSSplitView *)splitView canCollapseSubview:(NSView *)subview {
+	return [subview isEqual:self.rightPane];
 }
 
 @end

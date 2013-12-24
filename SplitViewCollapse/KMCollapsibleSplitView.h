@@ -10,6 +10,6 @@
 
 @interface KMCollapsibleSplitView : NSSplitView
 
-- (IBAction) toggleRightPane:(id)sender;
+@property (assign, nonatomic) BOOL animateCollapse;
 
 @end
