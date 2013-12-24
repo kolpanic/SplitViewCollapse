@@ -36,7 +36,6 @@
 
 - (void) awakeFromNib {
 	[self setDelegate:self];
-	[self determineDividerPosition];
     self.animateCollapse = YES;
 }
 
@@ -46,6 +45,7 @@
 	if (self.originalRightPaneWidth <= 0.0) {
 		self.originalRightPaneWidth = self.rightPane.frame.size.width;
 	}
+	_dividerPosition = (self.frame.size.width - self.rightPane.frame.size.width);
 
 	BOOL isCollapsed = [self isSubviewCollapsed:self.rightPane];
 
@@ -77,17 +77,6 @@
 
 - (NSView *) rightPane {
 	return _rightPane ? : (_rightPane = [[self subviews] objectAtIndex:1]);
-}
-
-#pragma mark - Resizing
-
-- (void) viewDidEndLiveResize {
-	[self determineDividerPosition];
-	[super viewDidEndLiveResize];
-}
-
-- (void) determineDividerPosition {
-	_dividerPosition = (self.frame.size.width - self.rightPane.frame.size.width);
 }
 
 #pragma mark - NSSplitViewDelegate
